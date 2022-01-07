@@ -1,4 +1,5 @@
 require 'car'
+require 'shared_examples/a_standard_vehicle'
 
 describe Car do
   it "allows reading for :wheels" do
@@ -18,20 +19,8 @@ describe Car do
     #   car = Car.new
     # end
 
-    it 'allows reading and writing for :make' do
-      subject.make = 'Test'
-      expect(subject.make).to eq('Test')
-    end
+    it_behaves_like('a standard vehicle')
 
-    it "allows reading and writing for :year" do
-      subject.year = '2001'
-      expect(subject.year).to eq('2001')
-    end
-
-    it "allows reading and writing for :color" do
-      subject.color = 'red'
-      expect(subject.color).to eq('red')
-    end
   end
 
   context '.colors' do
